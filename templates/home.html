@@ -1,0 +1,75 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Insurance Prediction Indicator</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Insurance Prediction</legend>
+        </h1>
+        <div class="mb-3">
+            <label class="form-label">sex</label>
+            <select class="form-control" name="sex" placeholder="Enter you sex" required>
+                <option class="placeholder" selected disabled value="">Select your sex</option>
+                <option value="male">
+                    Male
+                </option>
+                <option value="female">
+                    Female
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">smoker</label>
+            <select class="form-control" name="smoker" placeholder="smoker" required>
+                <option class="smoker" selected disabled value="">Select</option>
+                <option value="yes">
+                    Yes
+                </option>
+                <option value="no">
+                    No
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Region</label>
+            <select class="form-control" name="region" placeholder="Enter you region" required>
+                <option class="placeholder" selected disabled value="">Select region</option>
+                <option value="southwest">
+                    Southwest
+                </option>
+                <option value="southeast">
+                    Southeast
+                </option>
+                <option value="northwest">
+                    Northwest
+                </option>
+                <option value="northeast">
+                    Northeast
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Age</label>
+            <input class="form-control" type="number" name="age"
+                placeholder="Age" min='0' max='1000' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BMI</label>
+            <input class="form-control" type="number" name="bmi"
+                placeholder="BMI" min='0' max='100' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Children</label>
+            <input class="form-control" type="number" name="children"
+                placeholder="Children" min='0' max='100' />
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict your Insurance Expense" required />
+        </div>
+    </form>
+    <h2>
+       THE  prediction is {{results}}
+    </h2>
+   <body>
+</html>
