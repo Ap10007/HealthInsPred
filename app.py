@@ -24,9 +24,9 @@ def predict_datapoint():
             sex=request.form.get('sex'),
             smoker=request.form.get('smoker'),
             region=request.form.get('region'),
-            age=request.float(request.form.get('age')),
-            bmi=request.float(request.form.get('bmi')),
-            children=float(request.form.get('children'))
+            age=int(request.form.get('age')),
+            bmi=int(request.form.get('bmi')),
+            children=int(request.form.get('children'))
             
 
         )
@@ -42,4 +42,4 @@ def predict_datapoint():
     
 
 if __name__=="__main__":
-    app.run(host="0.0.0.0")        
+    app.run(host="0.0.0.0",debug=True)
